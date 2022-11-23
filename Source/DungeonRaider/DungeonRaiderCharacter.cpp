@@ -7,6 +7,7 @@
 #include "Components/CapsuleComponent.h"
 #include "Components/InputComponent.h"
 #include "GameFramework/InputSettings.h"
+#include "Grabber.h"
 
 
 //////////////////////////////////////////////////////////////////////////
@@ -42,6 +43,7 @@ void ADungeonRaiderCharacter::BeginPlay()
 	// Call the base class  
 	Super::BeginPlay();
 
+	GrabberComponent = FindComponentByClass<UGrabber>();
 }
 
 //////////////////////////////////////////////////////////////////////////// Input
@@ -57,6 +59,10 @@ void ADungeonRaiderCharacter::SetupPlayerInputComponent(class UInputComponent* P
 
 	// Bind fire event
 	PlayerInputComponent->BindAction("PrimaryAction", IE_Pressed, this, &ADungeonRaiderCharacter::OnPrimaryAction);
+
+	// Bind grabbing events
+	PlayerInputComponent->BindAction("Grab", IE_Pressed, this, &ADungeonRaiderCharacter::Grab);
+	PlayerInputComponent->BindAction("Grab", IE_Released, this, &ADungeonRaiderCharacter::UnGrab);
 
 	// Enable touchscreen input
 	EnableTouchscreenMovement(PlayerInputComponent);
@@ -78,6 +84,22 @@ void ADungeonRaiderCharacter::OnPrimaryAction()
 {
 	// Trigger the OnItemUsed Event
 	OnUseItem.Broadcast();
+}
+
+void ADungeonRaiderCharacter::Grab()
+{
+	if (GrabberComponent != nullptr)
+	{
+		GrabberComponent->Grab();
+	}
+}
+
+void ADungeonRaiderCharacter::UnGrab()
+{
+	if (GrabberComponent != nullptr)
+	{
+		GrabberComponent->UnGrab();
+	}
 }
 
 void ADungeonRaiderCharacter::BeginTouch(const ETouchIndex::Type FingerIndex, const FVector Location)

@@ -99,5 +99,11 @@ public:
 	/** Returns FirstPersonCameraComponent subobject **/
 	UCameraComponent* GetFirstPersonCameraComponent() const { return FirstPersonCameraComponent; }
 
+private:
+	class UGrabber* GrabberComponent;
+
+	/** Grabbing events. */
+	void Grab();
+	void UnGrab();
 };
 
