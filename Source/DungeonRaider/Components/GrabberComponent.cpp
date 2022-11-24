@@ -1,12 +1,12 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 
-#include "Grabber.h"
+#include "GrabberComponent.h"
 #include "DrawDebugHelpers.h"
 #include "PhysicsEngine/PhysicsHandleComponent.h"
 
 // Sets default values for this component's properties
-UGrabber::UGrabber()
+UGrabberComponent::UGrabberComponent()
 {
 	// Set this component to be initialized when the game starts, and to be ticked every frame.  You can turn these features
 	// off to improve performance if you don't need them.
@@ -15,7 +15,7 @@ UGrabber::UGrabber()
 
 
 // Called when the game starts
-void UGrabber::BeginPlay()
+void UGrabberComponent::BeginPlay()
 {
 	Super::BeginPlay();
 
@@ -24,7 +24,7 @@ void UGrabber::BeginPlay()
 
 
 // Called every frame
-void UGrabber::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
+void UGrabberComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
 {
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
 
@@ -37,7 +37,7 @@ void UGrabber::TickComponent(float DeltaTime, ELevelTick TickType, FActorCompone
 	}
 }
 
-void UGrabber::Grab()
+void UGrabberComponent::Grab()
 {
 	FHitResult HitResult;
 	bool bCanGrab = TryToGrab(HitResult);
@@ -51,7 +51,7 @@ void UGrabber::Grab()
 	}
 }
 
-void UGrabber::UnGrab()
+void UGrabberComponent::UnGrab()
 {
 	if (PhysicsHandleComponent != nullptr && PhysicsHandleComponent->GetGrabbedComponent() != nullptr)
 	{
@@ -60,7 +60,7 @@ void UGrabber::UnGrab()
 	}
 }
 
-bool UGrabber::TryToGrab(FHitResult& OutHitResult)
+bool UGrabberComponent::TryToGrab(FHitResult& OutHitResult)
 {
 	FVector StartLocation = GetComponentLocation();
 	FVector EndLocation = GetForwardVector() * MaxGrabDistance + StartLocation;

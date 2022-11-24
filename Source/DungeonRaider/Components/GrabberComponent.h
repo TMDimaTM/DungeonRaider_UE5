@@ -3,18 +3,18 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "Components/ActorComponent.h"
-#include "Mover.generated.h"
+#include "Components/SceneComponent.h"
+#include "GrabberComponent.generated.h"
 
 
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
-class DUNGEONRAIDER_API UMover : public UActorComponent
+class DUNGEONRAIDER_API UGrabberComponent : public USceneComponent
 {
 	GENERATED_BODY()
 
 public:	
 	// Sets default values for this component's properties
-	UMover();
+	UGrabberComponent();
 
 protected:
 	// Called when the game starts
@@ -27,19 +27,20 @@ public:
 private:
 
 	UPROPERTY(EditAnywhere)
-	FVector MoveOffset;
+	float MaxGrabDistance = 250;
 
 	UPROPERTY(EditAnywhere)
-	float MoveTime;
+	float GrabRadius = 100;
 
-	UPROPERTY(VisibleAnywhere)
-	bool bShouldMove;
+	UPROPERTY(EditAnywhere)
+	float HoldDistance = 150;
 
-	AActor* Owner;
+	class UPhysicsHandleComponent* PhysicsHandleComponent;
 
-	FVector StartLocation;
-	FVector CurrentLocation;
-	FVector TargetLocation;
+	bool TryToGrab(FHitResult& OutHitResult);
 
-	float MoveSpeed;
+public:
+
+	void Grab();
+	void UnGrab();
 };

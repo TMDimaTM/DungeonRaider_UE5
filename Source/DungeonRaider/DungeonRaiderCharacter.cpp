@@ -7,7 +7,7 @@
 #include "Components/CapsuleComponent.h"
 #include "Components/InputComponent.h"
 #include "GameFramework/InputSettings.h"
-#include "Grabber.h"
+#include "Components/GrabberComponent.h"
 
 
 //////////////////////////////////////////////////////////////////////////
@@ -43,7 +43,7 @@ void ADungeonRaiderCharacter::BeginPlay()
 	// Call the base class  
 	Super::BeginPlay();
 
-	GrabberComponent = FindComponentByClass<UGrabber>();
+	GrabberComponent = FindComponentByClass<UGrabberComponent>();
 }
 
 //////////////////////////////////////////////////////////////////////////// Input

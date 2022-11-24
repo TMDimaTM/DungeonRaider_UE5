@@ -100,7 +100,7 @@ public:
 	UCameraComponent* GetFirstPersonCameraComponent() const { return FirstPersonCameraComponent; }
 
 private:
-	class UGrabber* GrabberComponent;
+	class UGrabberComponent* GrabberComponent;
 
 	/** Grabbing events. */
 	void Grab();
