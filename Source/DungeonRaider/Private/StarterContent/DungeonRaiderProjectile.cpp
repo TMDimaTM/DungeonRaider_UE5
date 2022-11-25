@@ -1,6 +1,6 @@
 // Copyright Epic Games, Inc. All Rights Reserved.
 
-#include "DungeonRaiderProjectile.h"
+#include "StarterContent/DungeonRaiderProjectile.h"
 #include "GameFramework/ProjectileMovementComponent.h"
 #include "Components/SphereComponent.h"
 

@@ -1,9 +1,9 @@
 // Copyright Epic Games, Inc. All Rights Reserved.
 
 
-#include "TP_WeaponComponent.h"
-#include "DungeonRaiderCharacter.h"
-#include "DungeonRaiderProjectile.h"
+#include "StarterContent/TP_WeaponComponent.h"
+#include "StarterContent/DungeonRaiderCharacter.h"
+#include "StarterContent/DungeonRaiderProjectile.h"
 #include "GameFramework/PlayerController.h"
 #include "Camera/PlayerCameraManager.h"
 #include "Kismet/GameplayStatics.h"

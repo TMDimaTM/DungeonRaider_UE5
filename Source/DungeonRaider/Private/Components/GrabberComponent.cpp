@@ -1,7 +1,7 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 
-#include "GrabberComponent.h"
+#include "Components/GrabberComponent.h"
 #include "DrawDebugHelpers.h"
 #include "PhysicsEngine/PhysicsHandleComponent.h"
 
@@ -11,6 +11,10 @@ UGrabberComponent::UGrabberComponent()
 	// Set this component to be initialized when the game starts, and to be ticked every frame.  You can turn these features
 	// off to improve performance if you don't need them.
 	PrimaryComponentTick.bCanEverTick = true;
+
+	MaxGrabDistance = 250.0f;
+	GrabRadius = 100.0f;
+	HoldDistance = 150.0f;
 }
 
 

@@ -1,7 +1,7 @@
 // Copyright Epic Games, Inc. All Rights Reserved.
 
-#include "DungeonRaiderGameMode.h"
-#include "DungeonRaiderCharacter.h"
+#include "StarterContent/DungeonRaiderGameMode.h"
+#include "StarterContent/DungeonRaiderCharacter.h"
 #include "UObject/ConstructorHelpers.h"
 
 ADungeonRaiderGameMode::ADungeonRaiderGameMode()
