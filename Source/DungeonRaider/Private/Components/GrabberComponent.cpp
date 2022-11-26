@@ -2,7 +2,6 @@
 
 
 #include "Components/GrabberComponent.h"
-#include "DrawDebugHelpers.h"
 #include "PhysicsEngine/PhysicsHandleComponent.h"
 
 // Sets default values for this component's properties
