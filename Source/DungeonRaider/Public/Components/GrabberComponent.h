@@ -24,6 +24,11 @@ public:
 	// Called every frame
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 
+public:
+
+	void Grab();
+	void UnGrab();
+
 private:
 
 	UPROPERTY(EditAnywhere)
@@ -38,9 +43,4 @@ private:
 	class UPhysicsHandleComponent* PhysicsHandleComponent;
 
 	bool TryToGrab(FHitResult& OutHitResult);
-
-public:
-
-	void Grab();
-	void UnGrab();
 };
