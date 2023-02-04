@@ -40,7 +40,8 @@ private:
 	UPROPERTY(EditAnywhere)
 	float HoldDistance;
 
+	UPROPERTY()
 	class UPhysicsHandleComponent* PhysicsHandleComponent;
 
-	bool TryToGrab(FHitResult& OutHitResult);
+	bool TryToGrab(FHitResult& OutHitResult) const;
 };

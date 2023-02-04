@@ -37,6 +37,7 @@ private:
 	UPROPERTY(EditAnywhere)
 	float MoveTime;
 
+	UPROPERTY()
 	AActor* Owner;
 
 	FVector StartLocation;

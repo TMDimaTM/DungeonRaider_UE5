@@ -32,7 +32,7 @@ public:
 	void SetMoverComponent(UMoverComponent* NewMoverComponent);
 
 private:
-
+	UPROPERTY()
 	UMoverComponent* MoverComponent;
 
 	// Collision detection

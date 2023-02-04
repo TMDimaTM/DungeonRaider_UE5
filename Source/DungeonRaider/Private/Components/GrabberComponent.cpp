@@ -63,7 +63,7 @@ void UGrabberComponent::UnGrab()
 	}
 }
 
-bool UGrabberComponent::TryToGrab(FHitResult& OutHitResult)
+bool UGrabberComponent::TryToGrab(FHitResult& OutHitResult) const
 {
 	FVector StartLocation = GetComponentLocation();
 	FVector EndLocation = GetForwardVector() * MaxGrabDistance + StartLocation;
